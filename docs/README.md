@@ -1,10 +1,17 @@
-# Deepfake & Synthetic Media Detector
+# Documentation – Deepfake & Synthetic Media Detector
 
-## Project Overview
-The Deepfake & Synthetic Media Detector is a Kubernetes-based pipeline designed to help users detect AI-generated or manipulated media, including images, videos, audio, and text. Users upload media, which is processed through a multi-pod pipeline to classify content as "Real" or "Fake," providing confidence scores and logging results. This project emphasizes infrastructure as code, multi-pod orchestration, and persistence handling in Kubernetes.
+This folder contains all the design and planning documentation for **Milestone 1** and beyond.  
+The purpose is to document the system architecture, workflow, and testing approach before full implementation.
 
-## Project Goal
-- Empower users to detect deepfakes and synthetic media.
-- Demonstrate multi-pod and multi-container Kubernetes deployment.
-- Implement preprocessing, inference, storage, and alerting in a structured pipeline.
-- Provide real-time detection and logging for potential misinformation.
+## 📁 Contents
+- **data_flow_diagram.png** – End-to-end data movement visualization (Upload → Preprocessing → Inference → Storage → Results)
+- **architecture_diagram.png** – Kubernetes multi-pod architecture showing backend, inference, and storage connectivity.
+- **test_plan.md** – Lists all test cases, expected outcomes, and edge case handling.
+- **risk_register.md** – Identifies potential risks, severity, and mitigation strategies.
+- **user_stories.md** – 2–3 detailed user stories with acceptance criteria.
+- **api_contracts.md** – REST endpoint documentation with payload and response examples.
+
+## 🧭 Purpose
+The documentation folder serves as the foundation for design and review before implementation.  
+It ensures the project aligns with **Kubernetes principles**, **cloud-native design**, and **secure, scalable architecture**.
+
