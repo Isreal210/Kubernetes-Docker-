@@ -1,22 +1,31 @@
-# Kubernetes-Docker-
+# 🧪 Testing & Validation – Deepfake & Synthetic Media Detector
 
-# Deepfake & Synthetic Media Detector
+This folder contains all **unit, integration, and system tests** for the Deepfake & Synthetic Media Detector project.  
+The goal of this testing suite is to ensure the reliability, performance, and security of the end-to-end media processing pipeline — from upload to inference to storage.
 
-## Project Overview
-The Deepfake & Synthetic Media Detector is a Kubernetes-based pipeline designed to help users detect AI-generated or manipulated media, including images, videos, audio, and text. Users upload media, which is processed through a multi-pod pipeline to classify content as "Real" or "Fake," providing confidence scores and logging results. This project emphasizes infrastructure as code, multi-pod orchestration, and persistence handling in Kubernetes.
+---
 
-### Why This Project is Unique
-We are building a **general-purpose authenticity verification pipeline** that is **multi-modal, user-friendly, and fully automated**. Unlike current tools that only detect deepfakes in videos or require technical expertise, our system handles images, videos, audio, and text, providing real-time results, persistent logs, and alerts.
+## 🚀 Overview
 
-Most existing solutions are:
-- Single-modality (only video, image, or text)
-- Technical and not easily usable by general users
-- Fragmented across multiple tools for different media types
+The testing process is divided into multiple stages to match the **multi-pod Kubernetes architecture**:
 
-Our pipeline unifies these capabilities into one **easy-to-use platform**, making it something nobody else currently provides.
+| Test Level | Description |
+|-------------|--------------|
+| **Unit Tests** | Validate individual functions and preprocessing logic (e.g., image resizing, text cleaning). |
+| **Integration Tests** | Test interactions between pods (Flask API ↔ Preprocessing ↔ Inference ↔ Storage). |
+| **System Tests** | Simulate real user scenarios: upload → analyze → store → retrieve. |
+| **Security Tests** | Validate authentication, authorization, and data isolation per user. |
 
-## Project Goal
-- Empower users to detect deepfakes and synthetic media.
-- Demonstrate multi-pod and multi-container Kubernetes deployment.
-- Implement preprocessing, inference, storage, and alerting in a structured pipeline.
-- Provide real-time detection and logging for potential misinformation.
+---
+
+## 🧩 Folder Structure
+
+| File | Description |
+|------|--------------|
+| `test_upload_valid.py` | Tests valid file uploads and successful inference results. |
+| `test_upload_invalid.py` | Tests unsupported or corrupted files and expected error messages. |
+| `test_inference.py` | Validates that models load correctly and inference returns accurate predictions. |
+| `test_preprocessing.py` | Ensures preprocessing modules (audio, video, text, image) produce expected outputs. |
+| `test_authentication.py` | Confirms JWT-based authentication flow (register → login → token validation). |
+| `test_storage.py` | Verifies that user data persists correctly in MongoDB and can be cleared when full. |
+
