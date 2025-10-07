@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 from model_loader import ModelContainer
 import tempfile, os
