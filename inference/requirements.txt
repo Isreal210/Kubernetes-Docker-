@@ -1,5 +1,8 @@
 torch
 torchvision
+torchaudio
+transformers
+Pillow
 opencv-python
+flask
 numpy
-pillow
